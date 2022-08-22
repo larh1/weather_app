@@ -1,5 +1,5 @@
 /* Fonts */
-@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400&display=swap");
 
 :root {
     --primary: #181c3a;
@@ -8,7 +8,8 @@
 }
 
 body {
-    font-family: "Inter", sans-serif;
+    font-family: "Ubuntu", sans-serif;
+    color: white;
 }
 
 .main {
@@ -30,7 +31,23 @@ body {
     background-color: var(--light);
 }
 
-.btn-purple:hover, .btn-purple:active {
+.btn-purple:hover,
+.btn-purple:active {
     color: white;
     background-color: var(--light);
+}
+
+/* Text */
+.text-purple {
+    color: var(--secondary);
+}
+
+/* img */
+.img-map {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.text-last-updated{
+    font-size: .8rem;
 }

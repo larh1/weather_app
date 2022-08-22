@@ -41,6 +41,61 @@
                 </div>
             </nav>
         </main>
+        <br>
+        <!-- Current -->
+        <section class="container pb-4">
+            <div class="row">
+                <!-- Weather -->
+                <div class="col my-3">
+                    <div class="col  text-end">
+                        <p class="h4 fw-bold text-white">
+                            <i class="text-purple fa-solid fa-location-dot"></i>
+                            Tehuacán, Puebla
+                        </p>
+                        <p class="h5 fw-light">México</p>
+                    </div>
+                    <br>
+                    <p class="align-text-bottom h4">
+                        <img src="img/cloud.png" alt="Cloud" height="52" class="" style="margin-top: -10px">
+                        <span class="">16 °C</span>
+                    </p>
+                    <!-- Climate -->
+                    <p>Parcialmente nublado</p>
+                    <!-- Metrics -->
+
+                    <div class="container ms-3">
+                        <table width="70%">
+                            <tr>
+                                <td>Sensación térmica</td>
+                                <td>14 °C</td>
+                            </tr>
+                            <tr>
+                                <td>Temperatura min.</td>
+                                <td>12 °C</td>
+                            </tr>
+                            <tr>
+                                <td>Temperatura max.</td>
+                                <td>14 °C</td>
+                            </tr>
+                            <tr>
+                                <td>Humedad</td>
+                                <td>14 °C</td>
+                            </tr>
+                            <tr>
+                                <td>Visibilidad</td>
+                                <td>90 %</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <!-- Map/City -->
+                <div class="col-md-6">
+                    <img src="img/mx.jpeg" alt="Imagen" class="img-fluid1 rounded img-map">
+                    <p class="text-muted mt-2 text-end fw-lighter text-last-updated">Última actualización: 14 Agosto, 2022 18:45 pm</p>
+                </div>
+            </div>
+            <hr>
+        </section>
     </div>
     <!-- app -->
     <script type="text/javascript" src="/js/app.js"></script>
