@@ -13,7 +13,7 @@ body {
 }
 
 .main {
-    height: 100vh;
+    min-height: 100vh;
 }
 
 /* Colors */
@@ -22,6 +22,10 @@ body {
 }
 
 .bg-purple-ligth {
+    background-color: var(--light);
+}
+
+.bg-secondary {
     background-color: var(--light);
 }
 
@@ -48,6 +52,39 @@ body {
     max-height: 100%;
 }
 
-.text-last-updated{
-    font-size: .8rem;
+.text-last-updated {
+    font-size: 0.8rem;
+}
+
+.card-week {
+    width: 10rem;
+    border-radius: 20px;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+img{
+    box-shadow: 10px 50px red;
+}
+
+.card-light {
+    background-color: var(--light);
+}
+
+.card-dark {
+    border: 1px solid white;
+    background-color: var(--primary);
+}
+
+.horizontal-scroll {
+    overflow: auto;
+    white-space: nowrap;
+}
+
+.horizontal-scroll .card-week {
+    display: inline-block;
+}
+
+.desc {
+    white-space: normal;
 }

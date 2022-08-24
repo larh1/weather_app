@@ -48,7 +48,7 @@
                 <!-- Weather -->
                 <div class="col my-3">
                     <div class="col  text-end">
-                        <p class="h4 fw-bold text-white">
+                        <p class="h3 fw-bold text-white">
                             <i class="text-purple fa-solid fa-location-dot"></i>
                             Tehuacán, Puebla
                         </p>
@@ -96,6 +96,65 @@
             </div>
             <hr>
         </section>
+
+        <!-- Weekkly -->
+        <section class="container">
+            <p class="h5">Pronóstico Semanal</p>
+            <!-- scroll -->
+            <div class="horizontal-scroll  py-4">
+
+                <div class="card-week card-light py-2 text-center">
+                    <p class="h5 mt-2">Hoy</p>
+                    <img src="img/cloud.png" width="60%" alt="Sem1" class="img-fluid">
+                    <p class="h5 mt-2 fw-bold">13° / 18°</p>
+                    <p class="desc mt-4">Lluvia moderada a fuerte</p>
+                </div>
+                <div class="card-week card-dark py-2 text-center">
+                    <p class="h5 mt-2">Hoy</p>
+                    <img src="img/cloud.png" width="60%" alt="Sem1" class="img-fluid">
+                    <p class="h5 mt-2 fw-bold">13° / 18°</p>
+                    <p class="desc mt-4">Lluvia moderada a fuerte</p>
+                </div>
+                <div class="card-week card-light py-2 text-center">
+                    <p class="h5 mt-2">Hoy</p>
+                    <img src="img/cloud.png" width="60%" alt="Sem1" class="img-fluid">
+                    <p class="h5 mt-2 fw-bold">13° / 18°</p>
+                    <p class="desc mt-4">Lluvia moderada a fuerte</p>
+                </div>
+                <div class="card-week card-dark py-2 text-center">
+                    <p class="h5 mt-2">Hoy</p>
+                    <img src="img/cloud.png" width="60%" alt="Sem1" class="img-fluid">
+                    <p class="h5 mt-2 fw-bold">13° / 18°</p>
+                    <p class="desc mt-4">Lluvia moderada a fuerte</p>
+                </div>
+                <div class="card-week card-light py-2 text-center">
+                    <p class="h5 mt-2">Hoy</p>
+                    <img src="img/cloud.png" width="60%" alt="Sem1" class="img-fluid">
+                    <p class="h5 mt-2 fw-bold">13° / 18°</p>
+                    <p class="desc mt-4">Lluvia moderada a fuerte</p>
+                </div>
+                <div class="card-week card-dark py-2 text-center">
+                    <p class="h5 mt-2">Hoy</p>
+                    <img src="img/cloud.png" width="60%" alt="Sem1" class="img-fluid">
+                    <p class="h5 mt-2 fw-bold">13° / 18°</p>
+                    <p class="desc mt-4">Lluvia moderada a fuerte</p>
+                </div>
+                <div class="card-week card-light py-2 text-center">
+                    <p class="h5 mt-2">Hoy</p>
+                    <img src="img/cloud.png" width="60%" alt="Sem1" class="img-fluid">
+                    <p class="h5 mt-2 fw-bold">13° / 18°</p>
+                    <p class="desc mt-4">Lluvia moderada a fuerte</p>
+                </div>
+                <div class="card-week card-dark py-2 text-center">
+                    <p class="h5 mt-2">Hoy</p>
+                    <img src="img/cloud.png" width="60%" alt="Sem1" class="img-fluid">
+                    <p class="h5 mt-2 fw-bold">13° / 18°</p>
+                    <p class="desc mt-4">Lluvia moderada a fuerte</p>
+                </div>
+            </div>
+        </section>
+        <br>
+        <br>
     </div>
     <!-- app -->
     <script type="text/javascript" src="/js/app.js"></script>
