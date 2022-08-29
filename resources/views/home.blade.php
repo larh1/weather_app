@@ -41,6 +41,52 @@
             </nav>
         </main>
         <br>
+        <!-- Search -->
+        <section class="container">
+            <h3 class="">Resultado de "Buscar</h3>
+            <div class="my-4">
+                <div class="card-search my-3">
+                    <div class="row">
+                        <div class="col col-lg-2 col-md-2">
+                            <img src="img/cloud.png" alt="Nube" height="72" class="ms-4 mt-2">
+                        </div>
+                        <div class="col">
+                            <p class="desc-search fw-bold py-0">Mérida, MX</p>
+                            <p class="desc-search">Temp. 28° C</p>
+                            <p class="desc-search">Ubicación: -20.25, -15.45</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-search my-3">
+                    <div class="row">
+                        <div class="col col-lg-2 col-md-2">
+                            <img src="img/cloud.png" alt="Nube" height="72" class="ms-4 mt-2">
+                        </div>
+                        <div class="col">
+                            <p class="desc-search fw-bold py-0">Mérida, MX</p>
+                            <p class="desc-search">Temp. 28° C</p>
+                            <p class="desc-search">Ubicación: -20.25, -15.45</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-search my-3">
+                    <div class="row">
+                        <div class="col col-lg-2 col-md-2">
+                            <img src="img/cloud.png" alt="Nube" height="72" class="ms-4 mt-2">
+                        </div>
+                        <div class="col">
+                            <p class="desc-search fw-bold py-0">Mérida, MX</p>
+                            <p class="desc-search">Temp. 28° C</p>
+                            <p class="desc-search">Ubicación: -20.25, -15.45</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <p class="text-end" style="max-width: 95%;">Total: 4</p>
+            <hr>
+        </section>
+
         <!-- Current -->
         <section class="container pb-4">
             <div class="row">

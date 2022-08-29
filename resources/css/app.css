@@ -58,13 +58,11 @@ body {
 }
 
 .card-week {
+    cursor: pointer;
     width: 10rem;
     border-radius: 20px;
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-}
-
-img {
+    margin-left: 0.2rem;
+    margin-right: 0.2rem;
 }
 
 .card-light {
@@ -94,6 +92,7 @@ img {
 
 /* Hour cards */
 .card-hour {
+    cursor: pointer;
     border-radius: 20px;
     margin-top: 0.3rem;
     margin-bottom: 0.3rem;
@@ -126,4 +125,27 @@ img {
     height: 20rem;
     overflow: auto;
     white-space: nowrap;
+}
+
+/* Seach */
+.desc-search {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.card-search {
+    cursor: pointer;
+    border-radius: 20px;
+    outline: 1px solid;
+    line-height: 2rem;
+    vertical-align: middle;
+    vertical-align: middle;
+    max-width: 95%;
+}
+
+.card-search:hover {
+    outline: none;
+    background: rgba(234, 234, 234, 0.15);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
 }
