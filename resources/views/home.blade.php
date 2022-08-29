@@ -14,11 +14,10 @@
 </head>
 
 <body>
-    <div id="app" class="main bg-purple">
-
+    <div id="app" class="main">
         <!-- Brand -->
         <main class="container">
-            <nav class="navbar navbar-dark bg-purple">
+            <nav class="navbar navbar-dark ">
                 <div class="container-fluid">
                     <a class="navbar-brand fw-bold" href="#" style="font-size: 28px;">
                         <img src="img/weather.png" alt="Logo" height="52" class="d-inline-block align-text-bottom">
@@ -91,7 +90,7 @@
                 <!-- Map/City -->
                 <div class="col-md-6">
                     <img src="img/mx.jpeg" alt="Imagen" class="img-fluid1 rounded img-map">
-                    <p class="text-muted mt-2 text-end fw-lighter text-last-updated">Última actualización: 14 Agosto, 2022 18:45 pm</p>
+                    <p class="text-muted1 mt-2 text-end fw-lighter text-last-updated">Última actualización: 14 Agosto, 2022 18:45 pm</p>
                 </div>
             </div>
             <hr>

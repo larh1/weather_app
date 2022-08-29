@@ -2,14 +2,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400&display=swap");
 
 :root {
-    --primary: #181c3a;
-    --secondary: #3b448a;
-    --light: #7768e5;
+    --primary: #182848;
+    --secondary: #4b6cb7;
+    --light: #4b6cb7;
 }
 
 body {
     font-family: "Ubuntu", sans-serif;
     color: white;
+    background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
 }
 
 .main {
@@ -64,16 +65,18 @@ body {
 }
 
 img {
-    box-shadow: 10px 50px red;
 }
 
 .card-light {
-    background-color: var(--light);
+    background: rgba(234, 234, 234, 0.15);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
 }
 
 .card-dark {
-    border: 1px solid white;
-    background-color: var(--primary);
+    background: rgba(234, 234, 234, 0.15);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
 }
 
 .horizontal-scroll {
@@ -91,7 +94,6 @@ img {
 
 /* Hour cards */
 .card-hour {
-    border: 1px solid white;
     border-radius: 20px;
     margin-top: 0.3rem;
     margin-bottom: 0.3rem;
@@ -101,10 +103,12 @@ img {
     width: 100%;
     line-height: 3.5rem;
     vertical-align: middle;
+    background: rgba(234, 234, 234, 0.15);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
 }
 
 .card-hour .hour-light {
-    background-color: red;
     border: 1px solid white;
 }
 
