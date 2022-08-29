@@ -63,7 +63,7 @@ body {
     margin-right: 0.5rem;
 }
 
-img{
+img {
     box-shadow: 10px 50px red;
 }
 
@@ -87,4 +87,39 @@ img{
 
 .desc {
     white-space: normal;
+}
+
+/* Hour cards */
+.card-hour {
+    border: 1px solid white;
+    border-radius: 20px;
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
+    margin-left: 0.5rem;
+    margin-right: -5rem;
+    height: 3.5rem;
+    width: 100%;
+    line-height: 3.5rem;
+    vertical-align: middle;
+}
+
+.card-hour .hour-light {
+    background-color: red;
+    border: 1px solid white;
+}
+
+.card-hour .hour-dark {
+    border: 1px solid white;
+    background-color: var(--light);
+}
+
+.desc-2 {
+    font-size: 14px;
+    margin-right: 0.5rem;
+}
+
+.vertical-scroll {
+    height: 20rem;
+    overflow: auto;
+    white-space: nowrap;
 }
