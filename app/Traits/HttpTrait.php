@@ -14,7 +14,7 @@ trait HttpTrait
      * @param array $queryParams Parametros del query
      * @param array $formParams Parametros de form
      * @param array $headers Headers de la peticion
-     * @return void
+     * @return Object
      */
     public function MakeRequest($method, $url, $queryParams = [], $formParams = [], $headers = [])
     {

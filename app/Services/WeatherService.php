@@ -45,6 +45,28 @@ class WeatherService
         return $res;
     }
 
+    /**
+     * Obtener el clima de las coordenadas ingresadas
+     */
+    public function GetGurrentWeatherByCoords($lat, $long)
+    {
+        // Current
+        $res = $this->MakeRequest("GET", "data/2.5/weather", [
+            "lat" => $lat,
+            "lon" => $long,
+            "units" => "metric",
+            "lang" => "es"
+        ]);
+        $current = [
+            "weather" => $res->weather,
+            "main" => $res->main,
+            "time" => $res->dt,
+            "country" => $res->sys->country,
+            "name" => $res->name
+        ];
+
+        return $current;
+    }
     public function Test()
     {
         try
