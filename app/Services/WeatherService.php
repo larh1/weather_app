@@ -47,6 +47,9 @@ class WeatherService
 
     /**
      * Obtener el clima de las coordenadas ingresadas
+     * @param $lat string Latidud
+     * @param $long string Longitud
+     * @return Response
      */
     public function GetGurrentWeatherByCoords($lat, $long)
     {
@@ -67,23 +70,25 @@ class WeatherService
 
         return $current;
     }
-    public function Test()
+
+    /**
+     * Obtener el clima de los siguientes 5 días, en intervalos de 3 horas
+     * @param $lat string Latidud
+     * @param $long string Longitud
+     * @return Response
+     */
+    public function Get5D3HWeatherByCoords($lat, $long)
     {
-        try
-        {
-            $res = $this->MakeRequest(
-                "GET",
-                "geo/1.0/direct",
-                [
-                    "q" => "merida",
-                    "limit" => 10
-                ]
-            );
-            dd($res);
-        }
-        catch (Exception $e)
-        {
-            dd($e);
-        }
+        $res = $this->MakeRequest("GET", "data/2.5/forecast", [
+            "lat" => $lat,
+            "lon" => $long,
+            "units" => "metric",
+            "lang" => "es"
+        ]);
+        // 2 days (16 regs)
+        $weather = [
+            "list" => array_slice($res->list, 0, 16),
+        ];
+        return $weather;
     }
 }
