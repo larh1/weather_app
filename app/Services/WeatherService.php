@@ -27,6 +27,24 @@ class WeatherService
         $this->API_KEY = config("services.weather.api_key");
     }
 
+    /**
+     * Buscar las ciudades que coinciden con el nombre ingresado
+     * @param $search string Ciudad a buscar
+     * @return Response
+     */
+    public function SearchCities($search)
+    {
+        $res = $this->MakeRequest(
+            "GET",
+            "geo/1.0/direct",
+            [
+                "q" => $search,
+                "limit" => 20
+            ]
+        );
+        return $res;
+    }
+
     public function Test()
     {
         try
@@ -36,7 +54,7 @@ class WeatherService
                 "geo/1.0/direct",
                 [
                     "q" => "merida",
-                    "limit" => 5
+                    "limit" => 10
                 ]
             );
             dd($res);
