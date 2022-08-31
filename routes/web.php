@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SearchController;
 use App\Services\WeatherService;
 use Illuminate\Support\Facades\Route;
 
@@ -11,8 +12,4 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get("/", [HomeController::class, "Home"]);
-Route::get("/test", function ()
-{
-    $asd = new WeatherService();
-    $asd->Test();
-});
+Route::get("/search", [SearchController::class, "SearchCity"]);

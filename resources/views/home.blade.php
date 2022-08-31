@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <div id="app" class="main">
+    <div id="app1" class="main">
         <!-- Brand -->
         <main class="container">
             <nav class="navbar navbar-dark ">
@@ -30,12 +30,12 @@
                 <div class="container-fluid">
                     <div class="col"></div>
                     <div class="col-md-5">
-                        <div class="form-check-inline d-flex">
-                            <input type="text" class="form-control" placeholder="Buscar ciudad">
+                        <form action="search" class="form-check-inline d-flex">
+                            <input type="text" required name="city" class="form-control" placeholder="Buscar ciudad">
                             <button class="btn btn-dark btn-purple ms-3 asd">
                                 <i class="fa-solid fa-magnifying-glass"></i>
                             </button>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </nav>
