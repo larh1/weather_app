@@ -138,13 +138,15 @@ body {
     border-radius: 20px;
     outline: 1px solid;
     line-height: 2rem;
-    vertical-align: middle;
-    vertical-align: middle;
     max-width: 95%;
+    display: block;
+    text-decoration: none;
+    color: white;
 }
 
 .card-search:hover {
     outline: none;
+    color: white;
     background: rgba(234, 234, 234, 0.15);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);

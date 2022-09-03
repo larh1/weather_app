@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Http\Controllers\Helpers\Utilidades;
 use App\Traits\AuhotizeRequest;
 use App\Traits\HttpTrait;
 use App\Traits\InteractWithResponse;
@@ -61,11 +62,12 @@ class WeatherService
             "lang" => "es"
         ]);
         $current = [
-            "weather" => $res->weather,
+            "weather" => $res->weather[0],
             "main" => $res->main,
-            "time" => $res->dt,
+            "time" => Utilidades::GetDateFromUnix($res->dt),
             "country" => $res->sys->country,
-            "name" => $res->name
+            "name" => $res->name,
+            "visibility"=>$res->visibility
         ];
 
         return $current;

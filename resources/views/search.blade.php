@@ -49,10 +49,13 @@
             @if(count($results)>0)
             <div class="my-4">
                 @foreach($results as $r)
-                <div class="card-search my-3">
+                <a class="card-search my-3" href="{{
+                    'city?name='.$r->name .'&state='.$r->state .
+                    '&country='. $r->country .'&lat='.$r->lat.
+                    '&lon='.$r->lon}}">
                     <div class="row">
                         <div class="col col-lg-2 col-md-2">
-                            <img src="https://flagcdn.com/{{strtolower($r->country)}}.svg" height="64" class="ms-4 mt-2" alt="Venezuela">
+                            <img src="https://flagcdn.com/{{strtolower($r->country)}}.svg" height="64" class="ms-4 mt-2" alt="{{$r->country}}">
                         </div>
                         <div class="col">
                             <p class="desc-search fw-bold py-0">
@@ -62,7 +65,7 @@
                             <p class="desc-search">Ubicación: {{$r->lat}}, {{$r->lon}}</p>
                         </div>
                     </div>
-                </div>
+                </a>
                 @endforeach
                 <br>
                 <p class="text-end" style="max-width: 95%;">Total: {{count($results)}}</p>

@@ -16,6 +16,7 @@ class SearchController extends Controller
 
     /**
      * Buscar la ciudad
+     * @return View
      */
     public function SearchCity()
     {
@@ -26,6 +27,28 @@ class SearchController extends Controller
             // buscar
             $results = $this->service->SearchCities($city);
             return view("search", compact("city", "results"));
+        }
+        catch (Exception $e)
+        {
+            return view("error")->with("error", $e->getMessage());
+        }
+    }
+
+    /**
+     * Buscar el clima actual de la ciudad
+     * @return View
+     */
+    public function SearchWeather()
+    {
+        try
+        {
+            // Obtener datos del request
+            $state = request("state");
+            $lat = request("lat");
+            $lon = request("lon");
+            // Buscar actual
+            $current = $this->service->GetGurrentWeatherByCoords($lat, $lon);
+            return view("weather", compact("current", "state"));
         }
         catch (Exception $e)
         {
