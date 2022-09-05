@@ -48,7 +48,29 @@ class SearchController extends Controller
             $lon = request("lon");
             // Buscar actual
             $current = $this->service->GetGurrentWeatherByCoords($lat, $lon);
-            return view("weather", compact("current", "state"));
+            return view("weather", compact("current", "state", "lat", "lon"));
+        }
+        catch (Exception $e)
+        {
+            return view("error")->with("error", $e->getMessage());
+        }
+    }
+
+    /**
+     * Buscar el clima de los 5 dias, cada 3 horas
+     * 
+     */
+    public function GetByHour()
+    {
+        try
+        {
+            // Obtener datos del request
+            $state = request("state");
+            $lat = request("lat");
+            $lon = request("lon");
+            // Buscar actual
+            $current = $this->service->Get5D3HWeatherByCoords($lat, $lon);
+            return response()->json($current);
         }
         catch (Exception $e)
         {

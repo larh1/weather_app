@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/app.css">
     <!-- Font awesome -->
     <script src="https://kit.fontawesome.com/db9930c3f3.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -107,164 +108,12 @@
         <!-- Hour -->
         <section class="container pb-4">
             <p class="h5">Pronóstico por Hora</p>
-
-            <div class="vertical-scroll py-4">
-                <div class="card-hour desc-hour my-2" style="max-width: 95%">
-                    <div class="row">
-                        <div class="col col-lg-2 col-md-2">
-                            <img src="img/cloud.png" alt="Nube" height="50" class="ms-4">
-                        </div>
-                        <div class="col col-md-2">
-                            <p class="fw-bold">08:00</p>
-                        </div>
-                        <div class="col">
-                            <p class="desc-2">Intervalos nubosos</p>
-                        </div>
-                    </div>
+            <div class="text-center">
+                <div id="spin" class="spinner-border mt-5" role="status">
+                    <span class="visually-hidden">Loading...</span>
                 </div>
-                <div class="card-hour desc-hour my-2" style="max-width: 95%">
-                    <div class="row">
-                        <div class="col col-lg-2 col-md-2">
-                            <img src="img/cloud.png" alt="Nube" height="50" class="ms-4">
-                        </div>
-                        <div class="col col-md-2">
-                            <p class="fw-bold">08:00</p>
-                        </div>
-                        <div class="col">
-                            <p class="desc-2">Intervalos nubosos</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-hour desc-hour my-2" style="max-width: 95%">
-                    <div class="row">
-                        <div class="col col-lg-2 col-md-2">
-                            <img src="img/cloud.png" alt="Nube" height="50" class="ms-4">
-                        </div>
-                        <div class="col col-md-2">
-                            <p class="fw-bold">08:00</p>
-                        </div>
-                        <div class="col">
-                            <p class="desc-2">Intervalos nubosos</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-hour desc-hour my-2" style="max-width: 95%">
-                    <div class="row">
-                        <div class="col col-lg-2 col-md-2">
-                            <img src="img/cloud.png" alt="Nube" height="50" class="ms-4">
-                        </div>
-                        <div class="col col-md-2">
-                            <p class="fw-bold">08:00</p>
-                        </div>
-                        <div class="col">
-                            <p class="desc-2">Intervalos nubosos</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-hour desc-hour my-2" style="max-width: 95%">
-                    <div class="row">
-                        <div class="col col-lg-2 col-md-2">
-                            <img src="img/cloud.png" alt="Nube" height="50" class="ms-4">
-                        </div>
-                        <div class="col col-md-2">
-                            <p class="fw-bold">08:00</p>
-                        </div>
-                        <div class="col">
-                            <p class="desc-2">Intervalos nubosos</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-hour desc-hour my-2" style="max-width: 95%">
-                    <div class="row">
-                        <div class="col col-lg-2 col-md-2">
-                            <img src="img/cloud.png" alt="Nube" height="50" class="ms-4">
-                        </div>
-                        <div class="col col-md-2">
-                            <p class="fw-bold">08:00</p>
-                        </div>
-                        <div class="col">
-                            <p class="desc-2">Intervalos nubosos</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-hour desc-hour my-2" style="max-width: 95%">
-                    <div class="row">
-                        <div class="col col-lg-2 col-md-2">
-                            <img src="img/cloud.png" alt="Nube" height="50" class="ms-4">
-                        </div>
-                        <div class="col col-md-2">
-                            <p class="fw-bold">08:00</p>
-                        </div>
-                        <div class="col">
-                            <p class="desc-2">Intervalos nubosos</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-hour desc-hour my-2" style="max-width: 95%">
-                    <div class="row">
-                        <div class="col col-lg-2 col-md-2">
-                            <img src="img/cloud.png" alt="Nube" height="50" class="ms-4">
-                        </div>
-                        <div class="col col-md-2">
-                            <p class="fw-bold">08:00</p>
-                        </div>
-                        <div class="col">
-                            <p class="desc-2">Intervalos nubosos</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-hour desc-hour my-2" style="max-width: 95%">
-                    <div class="row">
-                        <div class="col col-lg-2 col-md-2">
-                            <img src="img/cloud.png" alt="Nube" height="50" class="ms-4">
-                        </div>
-                        <div class="col col-md-2">
-                            <p class="fw-bold">08:00</p>
-                        </div>
-                        <div class="col">
-                            <p class="desc-2">Intervalos nubosos</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-hour desc-hour my-2" style="max-width: 95%">
-                    <div class="row">
-                        <div class="col col-lg-2 col-md-2">
-                            <img src="img/cloud.png" alt="Nube" height="50" class="ms-4">
-                        </div>
-                        <div class="col col-md-2">
-                            <p class="fw-bold">08:00</p>
-                        </div>
-                        <div class="col">
-                            <p class="desc-2">Intervalos nubosos</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-hour desc-hour my-2" style="max-width: 95%">
-                    <div class="row">
-                        <div class="col col-lg-2 col-md-2">
-                            <img src="img/cloud.png" alt="Nube" height="50" class="ms-4">
-                        </div>
-                        <div class="col col-md-2">
-                            <p class="fw-bold">08:00</p>
-                        </div>
-                        <div class="col">
-                            <p class="desc-2">Intervalos nubosos</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-hour desc-hour my-2" style="max-width: 95%">
-                    <div class="row">
-                        <div class="col col-lg-2 col-md-2">
-                            <img src="img/cloud.png" alt="Nube" height="50" class="ms-4">
-                        </div>
-                        <div class="col col-md-2">
-                            <p class="fw-bold">08:00</p>
-                        </div>
-                        <div class="col">
-                            <p class="desc-2">Intervalos nubosos</p>
-                        </div>
-                    </div>
-                </div>
+            </div>
+            <div class="vertical-scroll py-4" id="div_hour">
             </div>
             <hr>
         </section>
@@ -332,6 +181,42 @@
     <script type="text/javascript" src="/js/app.js"></script>
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            $("#spin").show();
+            var url = "hour?lat={{$lat}}&lon={{$lon}}";
+            $.ajax({
+                type: 'GET',
+                url: url,
+                dataType: 'json',
+                success: function(data) {
+                    data.list.forEach(e => {
+                        var min = e.main.temp_min;
+                        var max = e.main.temp_max;
+                        var date = new Date(e.dt * 1000);;
+                        var time = date.getHours() + ":00";
+                        var aux_desc = e.weather[0].description;
+                        var desc = aux_desc.charAt(0).toUpperCase() + aux_desc.slice(1);
+                        var img = `http://openweathermap.org/img/wn/${e.weather[0].icon}@4x.png`;
+                        var s = `<div class="card-hour desc-hour my-2"> <p class="hour-desc">
+                            <img src="${img}" alt="img" height="60" class="ms-2">
+                            <span class="ms-3">${time}</span>
+                            <span class="ms-3">${desc}</span>
+                            <span class="ms-3">${min} °C /${max} °C</span>
+                            </p></div`;
+                        $("#div_hour").append(s);
+                    });
+                    // Hide spinner
+                    $("#spin").hide();
+                },
+                error: function() {
+                    alert("Error")
+                    console.log("ERROR", data);
+                }
+            });
+        });
+    </script>
+
 </body>
 
 </html>
