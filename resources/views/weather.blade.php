@@ -96,7 +96,10 @@
                 </div>
                 <!-- Map/City -->
                 <div class="col-md-6">
-                    <img src="img/mx.jpeg" alt="Imagen" class="img-fluid1 rounded img-map">
+                    <div class="map-responsive">
+                        <iframe src="https://maps.google.com/maps?q={{$lat}},{{$lon}}&t=&z=13&ie=UTF8&iwloc=&output=embed" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
                     <p class="text-muted1 mt-2 text-end fw-lighter text-last-updated">
                         Última actualización: {{$current["time"]}}
                     </p>
@@ -120,7 +123,7 @@
 
         <!-- Weekkly -->
         <section class="container">
-            <p class="h5">Pronóstico Semanal</p>
+            <p class="h5">Pronóstico Semanal *</p>
             <!-- scroll -->
             <div class="horizontal-scroll  py-4">
 
@@ -173,6 +176,9 @@
                     <p class="desc mt-4">Lluvia moderada a fuerte</p>
                 </div>
             </div>
+            <p class="text-muted1 mt-2 text-end fw-lighter text-last-updated">
+                * Datos de ejemplo
+            </p>
         </section>
         <br>
         <br>
