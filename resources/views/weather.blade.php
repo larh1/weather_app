@@ -112,7 +112,7 @@
         <section class="container pb-4">
             <p class="h5">Pronóstico por Hora</p>
             <div class="text-center">
-                <div id="spin" class="spinner-border mt-5" role="status">
+                <div id="spinHour" class="spinner-border mt-5" role="status">
                     <span class="visually-hidden">Loading...</span>
                 </div>
             </div>
@@ -125,56 +125,12 @@
         <section class="container">
             <p class="h5">Pronóstico Semanal *</p>
             <!-- scroll -->
-            <div class="horizontal-scroll  py-4">
-
-                <div class="card-week card-light py-2 text-center">
-                    <p class="h5 mt-2">Hoy</p>
-                    <img src="img/cloud.png" width="60%" alt="Sem1" class="img-fluid">
-                    <p class="h5 mt-2 fw-bold">13° / 18°</p>
-                    <p class="desc mt-4">Lluvia moderada a fuerte</p>
+            <div class="text-center">
+                <div id="spinWeek" class="spinner-border mt-5" role="status">
+                    <span class="visually-hidden">Loading...</span>
                 </div>
-                <div class="card-week card-dark py-2 text-center">
-                    <p class="h5 mt-2">Hoy</p>
-                    <img src="img/cloud.png" width="60%" alt="Sem1" class="img-fluid">
-                    <p class="h5 mt-2 fw-bold">13° / 18°</p>
-                    <p class="desc mt-4">Lluvia moderada a fuerte</p>
-                </div>
-                <div class="card-week card-light py-2 text-center">
-                    <p class="h5 mt-2">Hoy</p>
-                    <img src="img/cloud.png" width="60%" alt="Sem1" class="img-fluid">
-                    <p class="h5 mt-2 fw-bold">13° / 18°</p>
-                    <p class="desc mt-4">Lluvia moderada a fuerte</p>
-                </div>
-                <div class="card-week card-dark py-2 text-center">
-                    <p class="h5 mt-2">Hoy</p>
-                    <img src="img/cloud.png" width="60%" alt="Sem1" class="img-fluid">
-                    <p class="h5 mt-2 fw-bold">13° / 18°</p>
-                    <p class="desc mt-4">Lluvia moderada a fuerte</p>
-                </div>
-                <div class="card-week card-light py-2 text-center">
-                    <p class="h5 mt-2">Hoy</p>
-                    <img src="img/cloud.png" width="60%" alt="Sem1" class="img-fluid">
-                    <p class="h5 mt-2 fw-bold">13° / 18°</p>
-                    <p class="desc mt-4">Lluvia moderada a fuerte</p>
-                </div>
-                <div class="card-week card-dark py-2 text-center">
-                    <p class="h5 mt-2">Hoy</p>
-                    <img src="img/cloud.png" width="60%" alt="Sem1" class="img-fluid">
-                    <p class="h5 mt-2 fw-bold">13° / 18°</p>
-                    <p class="desc mt-4">Lluvia moderada a fuerte</p>
-                </div>
-                <div class="card-week card-light py-2 text-center">
-                    <p class="h5 mt-2">Hoy</p>
-                    <img src="img/cloud.png" width="60%" alt="Sem1" class="img-fluid">
-                    <p class="h5 mt-2 fw-bold">13° / 18°</p>
-                    <p class="desc mt-4">Lluvia moderada a fuerte</p>
-                </div>
-                <div class="card-week card-dark py-2 text-center">
-                    <p class="h5 mt-2">Hoy</p>
-                    <img src="img/cloud.png" width="60%" alt="Sem1" class="img-fluid">
-                    <p class="h5 mt-2 fw-bold">13° / 18°</p>
-                    <p class="desc mt-4">Lluvia moderada a fuerte</p>
-                </div>
+            </div>
+            <div id="div_week" class="horizontal-scroll  py-4">
             </div>
             <p class="text-muted1 mt-2 text-end fw-lighter text-last-updated">
                 * Datos de ejemplo
@@ -188,6 +144,28 @@
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
     <script>
+        // Add records to Hour section
+        function addHour(min, max, img, time, desc) {
+            var s = `<div class="card-hour desc-hour my-2"> <p class="hour-desc">
+                            <img src="${img}" alt="img" height="60" class="ms-2">
+                            <span class="ms-3">${time}</span>
+                            <span class="ms-3">${desc}</span>
+                            <span class="ms-3">${min} °C /${max} °C</span>
+                            </p></div`;
+            $("#div_hour").append(s);
+        }
+
+        // Add records to Week section
+        function addWeek(min, max, img, time, desc,day) {
+            var w = `<div class="card-week card-dark py-2 text-center">
+                    <p class="h5 mt-2">${day}</p>
+                    <img src="${img}" width="60%" alt="Sem1" class="img-fluid">
+                    <p class="mt-2 fw-bold">${min}°C / ${max}°C </p>
+                    <p class="desc mt-4">${desc}</p>
+                </div>`;
+            $("#div_week").append(w);
+        }
+
         $(document).ready(function() {
             $("#spin").show();
             var url = "hour?lat={{$lat}}&lon={{$lon}}";
@@ -196,7 +174,12 @@
                 url: url,
                 dataType: 'json',
                 success: function(data) {
+                    var days = ["Lunes", "Martes", "Miércoles", "Jueves",
+                        "Viernes", "Sábado", "Domingo"
+                    ];
+                    var i = 0;
                     data.list.forEach(e => {
+                        if (i == 7) i = 0; //Reset day
                         var min = e.main.temp_min;
                         var max = e.main.temp_max;
                         var date = new Date(e.dt * 1000);;
@@ -204,16 +187,13 @@
                         var aux_desc = e.weather[0].description;
                         var desc = aux_desc.charAt(0).toUpperCase() + aux_desc.slice(1);
                         var img = `http://openweathermap.org/img/wn/${e.weather[0].icon}@4x.png`;
-                        var s = `<div class="card-hour desc-hour my-2"> <p class="hour-desc">
-                            <img src="${img}" alt="img" height="60" class="ms-2">
-                            <span class="ms-3">${time}</span>
-                            <span class="ms-3">${desc}</span>
-                            <span class="ms-3">${min} °C /${max} °C</span>
-                            </p></div`;
-                        $("#div_hour").append(s);
+                        addHour(min, max, img, time, desc);
+                        addWeek(min, max, img, time, desc, days[i]);
+                        i++;
                     });
                     // Hide spinner
-                    $("#spin").hide();
+                    $("#spinHour").hide();
+                    $("#spinWeek").hide();
                 },
                 error: function() {
                     alert("Error")
