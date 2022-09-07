@@ -4,7 +4,7 @@
         <div class="col  text-end">
             <p class="h3 fw-bold text-white">
                 <i class="text-purple fa-solid fa-location-dot"></i>
-                {{$current["name"]}}, {{$state}}
+                {{$state}}
             </p>
             <p class="h5 fw-light">
                 <span>

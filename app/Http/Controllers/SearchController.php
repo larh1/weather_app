@@ -46,9 +46,13 @@ class SearchController extends Controller
             $state = request("state");
             $lat = request("lat");
             $lon = request("lon");
+            $show_state = $state == "-";
             // Buscar actual
             $current = $this->service->GetGurrentWeatherByCoords($lat, $lon);
-            return view("weather", compact("current", "state", "lat", "lon"));
+            // Algunos resultados no tienen estado
+            $state = $state == "-" ? $state = $current["name"] :
+                $state = $current["name"] . ", " . $state;
+            return view("weather", compact("current", "state", "show_state", "lat", "lon"));
         }
         catch (Exception $e)
         {

@@ -17,28 +17,7 @@
     <div id="app" class="main">
         <!-- Brand -->
         <main class="container">
-            <nav class="navbar navbar-dark ">
-                <div class="container-fluid">
-                    <a class="navbar-brand fw-bold" href="#" style="font-size: 28px;">
-                        <img src="img/weather.png" alt="Logo" height="52" class="d-inline-block align-text-bottom">
-                        My Weather App
-                    </a>
-                </div>
-            </nav>
-            <!-- Search -->
-            <nav class="navbar navbar-light">
-                <div class="container-fluid">
-                    <div class="col"></div>
-                    <div class="col-md-5">
-                        <form action="search" class="form-check-inline d-flex">
-                            <input type="text" required name="city" class="form-control" placeholder="Buscar ciudad">
-                            <button class="btn btn-dark btn-purple ms-3 asd">
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </nav>
+            @include("shared.navbar")
         </main>
         <br>
         <!-- Search -->
@@ -49,10 +28,9 @@
             @if(count($results)>0)
             <div class="my-4">
                 @foreach($results as $r)
-                <a class="card-search my-3" href="{{
-                    'city?name='.$r->name .'&state='.$r->state .
-                    '&country='. $r->country .'&lat='.$r->lat.
-                    '&lon='.$r->lon}}">
+                <a class="card-search my-3" href='{{"city?name=" . $r->name . "&state=" .(isset($r->state)?$r->state:"-") .
+                    "&country=". $r->country ."&lat=".$r->lat.
+                    "&lon=".$r->lon}}'>
                     <div class="row">
                         <div class="col col-lg-2 col-md-2">
                             <img src="https://flagcdn.com/{{strtolower($r->country)}}.svg" height="64" class="ms-4 mt-2" alt="{{$r->country}}">
@@ -82,10 +60,10 @@
                 </div>
             </div>
             @endif
-            <hr>
         </section>
         <br>
         <br>
+        @include("shared.footer")
     </div>
     <!-- app -->
     <script type="text/javascript" src="/js/app.js"></script>
