@@ -1,4 +1,4 @@
-<main class="container">
+<div class="container">
     <nav class="navbar navbar-dark ">
         <div class="container-fluid">
             <a class="navbar-brand fw-bold" href="/" style="font-size: 28px;">
@@ -21,4 +21,4 @@
             </div>
         </div>
     </nav>
-</main>
+</div>
